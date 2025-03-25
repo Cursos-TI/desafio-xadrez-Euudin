@@ -7,6 +7,7 @@ void menu(){ // Menu de escolhas
     printf("    [B] - Bispo.\n");
     printf("    [R] - Rainha.\n");
     printf("    [S] - Sair.\n");
+    printf("    [C] - Cavalo.\n");
     printf("Escolha uma opção: ");
 }
 
@@ -272,6 +273,108 @@ void rainha(){ // Definindo o movimento da rainha
     }
 }
 
+#include <stdio.h>
+
+void cavalo() {
+    int opcao; // Escolher a opção de movimento
+    int movimento = 1; // Movimentação
+
+    printf("\n~~~~ Movimento Cavalo ~~~~\n");
+    printf("    [1] - Superior Direita.\n");
+    printf("    [2] - Superior Esquerda.\n");
+    printf("    [3] - Inferior Direita.\n");
+    printf("    [4] - Inferior Esquerda.\n");
+    printf("    [5] - Direita Superior.\n");
+    printf("    [6] - Direita Inferior.\n");
+    printf("    [7] - Esquerda Superior.\n");
+    printf("    [8] - Esquerda Inferior.\n");
+
+    // Solicitar opção de movimento
+    printf("\nEscolha a opção de movimento: ");
+    scanf("%d", &opcao);
+
+    printf("\nMovimento escolhido:\n");
+
+    // Utilizar loops aninhados para imprimir o movimento em "L"
+    switch (opcao) {
+        case 1:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Cima\n");
+                }
+                printf("Direita\n");
+            }
+            break;
+
+        case 2:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Cima\n");
+                }
+                printf("Esquerda\n");
+            }
+            break;
+
+        case 3:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Baixo\n");
+                }
+                printf("Direita\n");
+            }
+            break;
+
+        case 4:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Baixo\n");
+                }
+                printf("Esquerda\n");
+            }
+            break;
+
+        case 5:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Direita\n");
+                }
+                printf("Cima\n");
+            }
+            break;
+
+        case 6:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Direita\n");
+                }
+                printf("Baixo\n");
+            }
+            break;
+
+        case 7:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Esquerda\n");
+                }
+                printf("Cima\n");
+            }
+            break;
+
+        case 8:
+            while(movimento--){
+                for (int i = 0; i < 2; i++) {
+                    printf("Esquerda\n");
+                }
+                printf("Baixo\n");
+            }
+            break;
+            
+        default:
+            printf("Opção inválida!\n");
+            break;
+    }
+}
+
 int main(){
     char opcao; // Escolher a opção do menu
     int sair = 1; // Sair iniciada como verdadeis, loop finaliza quando sair = falso
@@ -297,6 +400,12 @@ int main(){
             case 'r':
                 rainha();
                 break;
+            
+            case 'C':
+            case 'c':
+                cavalo();
+                break;
+
             case 'S': // Finalizar o loop
             case 's':
                 sair = 0; // Atribuindo o valor falso
